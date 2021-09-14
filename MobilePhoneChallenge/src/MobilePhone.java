@@ -15,13 +15,18 @@ public class MobilePhone {
 
     public void printContacts() {
         for (int i = 0; i < contacts.size(); i++) {
-            System.out.println("Contact #" + (i + 1) + ": ");
-            System.out.println("Name: " + contacts.get(i).getName());
+            System.out.printf((i + 1) + ".: ");
+            System.out.printf("Name: " + contacts.get(i).getName() + " --> ");
             System.out.println("Phone Number: " + contacts.get(i).getPhoneNumber());
         }
     }
 
     public void modifyContact(Contact currentContact, Contact modifiedContact) {
+        if (exists(modifiedContact.getName())) {
+            System.out.println("Modified contact name already exists.");
+            return;
+        }
+
         int index = findContact(currentContact);
         if (index >= 0) {
             modifyContact(index, modifiedContact);
