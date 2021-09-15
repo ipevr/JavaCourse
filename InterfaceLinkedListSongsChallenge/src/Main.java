@@ -1,13 +1,10 @@
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.ListIterator;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
-    private static ArrayList<Album> albumList = new ArrayList<>();
+    private static List<Album> albumList = new ArrayList<>();
 
     public static void main(String[] args) {
-        LinkedList<Song> playList = new LinkedList<>();
+        List<Song> playList = new ArrayList<>();
 
         Album albumMichaelJackson =  new Album("Michael Jackson");
         albumMichaelJackson.addSong("Billie Jean", 3.41);
@@ -41,7 +38,7 @@ public class Main {
         System.out.println("\t6 - Print Options");
     }
 
-    private static void play(LinkedList<Song> playList) {
+    private static void play(List<Song> playList) {
         Scanner scanner = new Scanner(System.in);
 
         ListIterator<Song> songIterator = playList.listIterator();
@@ -132,7 +129,7 @@ public class Main {
         }
     }
 
-    private static void listSongs(LinkedList<Song> playList){
+    private static void listSongs(List<Song> playList){
         ListIterator<Song> songIterator = playList.listIterator();
         int count = 1;
 
